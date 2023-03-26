@@ -1,0 +1,36 @@
+{
+  "status": "ok",
+  "totalResults": 3,
+  "articles": [
+    {
+      "source": { "id": null, "name": "Deadline" },
+      "author": "Rosy Cordero",
+      "title": "Def Leppard Drummer Rick Allen Shares Health Update Following Violent Attack - Deadline",
+      "description": "Def Leppard drummer Rick Allen is speaking out for the first time following a violent attack on March 13 in South Florida. “Thank you everyone for your overwhelming support. Your love and pra…",
+      "url": "https://deadline.com/2023/03/def-leppard-drummer-rick-allen-health-update-violent-attack-1235304279/",
+      "urlToImage": "https://deadline.com/wp-content/uploads/2023/03/GettyImages-145832843.jpg?w=1024",
+      "publishedAt": "2023-03-20T04:16:00Z",
+      "content": "Def Leppard drummer Rick Allen is speaking out for the first time following a violent attack on March 13 in South Florida. \r\n“Thank you everyone for your overwhelming support. Your love and prayers a… [+1509 chars]"
+    },
+    {
+      "source": { "id": null, "name": "Neurosciencenews.com" },
+      "author": "Neuroscience News",
+      "title": "Prenatal Alcohol Exposure Linked to Gender-Specific Adversities - Neuroscience News",
+      "description": "A new study identified sex-specific differences in neurodevelopment and health-related disorders in children who were exposed to alcohol while in the womb. Prenatal alcohol exposure increased female children's risk of developing depression and anxiety, while …",
+      "url": "https://neurosciencenews.com/prenatal-alcohol-gender-mental-health-22826/",
+      "urlToImage": "https://neurosciencenews.com/files/2023/03/prenatal-alcohol-child-behavior-neurosicnes-1.jpg",
+      "publishedAt": "2023-03-19T22:39:01Z",
+      "content": "Summary: A new study identified sex-specific differences in neurodevelopment and health-related disorders in children who were exposed to alcohol while in the womb. Prenatal alcohol exposure increase… [+6404 chars]"
+    },
+    {
+      "source": { "id": null, "name": "SciTechDaily" },
+      "author": null,
+      "title": "Study Shows Healthy Dogs and Cats Can Transmit Dangerous Microbes to Humans – And Vice Versa - SciTechDaily",
+      "description": "Multi-drug-resistant organisms can be transmitted between healthy dogs and cats and their hospitalized owners. Fortunately, only a small number of cases were found suggesting pets are not a major source of antibiotic-resistant infections in hospital patients.…",
+      "url": "https://scitechdaily.com/study-shows-healthy-dogs-and-cats-can-transmit-dangerous-microbes-to-humans-and-vice-versa/",
+      "urlToImage": "https://scitechdaily.com/images/Veterinarians-Masks-Checking-Dog.jpg",
+      "publishedAt": "2023-03-19T09:57:56Z",
+      "content": "BySciTechDailyMarch 19, 2023\r\nHealthy dogs and cats may be transmitting multidrug-resistant organisms (MDROs) to their hospitalized owners, while humans could also be passing these microbes to their … [+5888 chars]"
+    }
+  ]
+}
