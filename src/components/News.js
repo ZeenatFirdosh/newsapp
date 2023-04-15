@@ -71,7 +71,7 @@ export class News extends Component {
       articles: this.articles,
       loading: true,
       page: 1,
-      totalResults: 0
+      totalResults: 4
     };
     document.title = `${this.capitalizeFirstLetter(
       this.props.category
@@ -79,15 +79,19 @@ export class News extends Component {
   }
 
   async updateNews(pageNo) {
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=dbe57b028aeb41e285a226a94865f7a7&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    this.props.setProgress(10);
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=b9f198476d3f4f85b691409e426e1620&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let data = await fetch(url);
+    this.props.setProgress(30);
     let parsedData = await data.json();
+    this.props.setProgress(70);
     this.setState({
       articles: parsedData.articles,
       totalResults: parsedData.totalResults,
       loading: false,
     });
+    this.props.setProgress(100);
   }
 
   async componentDidMount() {
@@ -105,7 +109,8 @@ export class News extends Component {
   };
 
   fetchMoreData = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=dbe57b028aeb41e285a226a94865f7a7&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
+    
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apikey=${this.props.apikey}&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
     this.setState({ page: this.state.page + 1 });
     let data = await fetch(url);
     let parsedData = await data.json()
@@ -118,8 +123,9 @@ export class News extends Component {
 
   render() {
     return (
-      <div className="container my-3">
-        <h1 className="text-center" style={{ margin: "35px 0px" }}>
+      <>
+        {/* <div className="container my-3"> */}
+        <h1 className="text-center" style={{ margin: "45px 0px",marginTop: "80px" }}>
           NewsMonkey - top {this.capitalizeFirstLetter(this.props.category)}{" "}
           Headlines
         </h1>
@@ -128,13 +134,13 @@ export class News extends Component {
         {/* console.log("{this.state.articles.length}")
         console.log({this.state.totalResults})
         console.log({this.fetchMoreData}) */}
-        <InfiniteScroll
+        {/* <InfiniteScroll
           dataLength={this.state.articles.length}
           next={this.fetchMoreData}
-          hasMore={this.state.articles.length != this.state.totalResults}
+          hasMore={this.state.articles.length !== this.state.totalResults}
           loader={this.state.loading && <Spinner/>}
-        >
-          <>
+        > */}
+        
         <div className="container">
           <div className="row">
             {this.state.articles.map((element) => {
@@ -142,7 +148,7 @@ export class News extends Component {
                   <div className="col-md-4">
                     <NewsItem
                       key={element.url}
-                      title={element.title ? element.title : " "}
+                      title={ (typeof element.title === 'undefined' || element.title === null )? "title": element.title }
                       description={
                         element.description ? element.description : " "
                       }
@@ -152,18 +158,19 @@ export class News extends Component {
                           : "https://deadline.com/wp-content/uploads/2023/03/GettyImages-145832843.jpg?w=1024"
                       }
                       newsUrl={element.url}
-                      author={element.author}
-                      date={element.publishedAt}
-                      source={element.source.name}
+                      author={element.author ? element.author : " " }
+                      date={element.publishedAt ? element.publishedAt :  " "}
+                      source={element.source.name ? element.source.name : " "}
                     />
                   </div>
                 );
               })}
           </div>
         </div>
-          </>
-          </InfiniteScroll>
-          {/* <div className="container d-flex justify-content-between">
+        
+          {/* </InfiniteScroll> */}
+          {/* </div> */}
+          <div className="container d-flex justify-content-between">
           <button
             disabled={this.state.page <= 1}
             type="button"
@@ -180,12 +187,12 @@ export class News extends Component {
           >
             Next &rarr;
           </button>
-        </div> */}
+        </div>
         
         
-      </div>
+     
+      </>
     );
   }
 }
-
 export default News;
