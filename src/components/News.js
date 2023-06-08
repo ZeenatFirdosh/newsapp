@@ -66,7 +66,7 @@ export class News extends Component {
   };
   constructor(props) {
     super(props);
-    console.log("construvctor of news");
+    console.log("constructor of news");
     this.state = {
       articles: this.articles,
       loading: true,
@@ -75,7 +75,7 @@ export class News extends Component {
     };
     document.title = `${this.capitalizeFirstLetter(
       this.props.category
-    )}-NewsMonkey`;
+    )}-NewsBot`;
   }
 
   async updateNews(pageNo) {
@@ -126,7 +126,7 @@ export class News extends Component {
       <>
         {/* <div className="container my-3"> */}
         <h1 className="text-center" style={{ margin: "45px 0px",marginTop: "80px" }}>
-          NewsMonkey - top {this.capitalizeFirstLetter(this.props.category)}{" "}
+          NewsBot - top {this.capitalizeFirstLetter(this.props.category)}{" "}
           Headlines
         </h1>
         {this.state.loading && <Spinner />}
@@ -155,7 +155,7 @@ export class News extends Component {
                       imageUrl={
                         element.urlToImage
                           ? element.urlToImage
-                          : "https://deadline.com/wp-content/uploads/2023/03/GettyImages-145832843.jpg?w=1024"
+                          : "https://cdn.ndtv.com/common/images/ogndtv.png"
                       }
                       newsUrl={element.url}
                       author={element.author ? element.author : " " }
